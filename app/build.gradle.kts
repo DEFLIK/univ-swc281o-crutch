@@ -43,7 +43,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation("androidx.car.app:app:1.2.0")
+//    implementation("androidx.car.app:app:1.2.0")
 //    implementation("androidx.media:media:1.6.0")
 //    implementation("androidx.appcompat:appcompat:1.6.1")
 //    testImplementation(libs.junit)

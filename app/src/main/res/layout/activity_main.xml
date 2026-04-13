@@ -9,40 +9,37 @@
         android:background="#252526">
 
     <Button
-            android:text="LogProperties"
+            android:text="SET INTEGER = 1"
             android:layout_width="279dp"
             android:layout_height="154dp"
-            android:id="@+id/button"
+            android:id="@+id/exhaustOpenButton"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="60dp"
-            app:layout_constraintHorizontal_bias="0.048"
-            app:layout_constraintBottom_toTopOf="@+id/scrollView"
-            app:layout_constraintVertical_bias="0.01" />
+            app:layout_constraintHorizontal_bias="0.048" />
 
-    <ScrollView
-            android:layout_width="1815dp"
-            android:layout_height="748dp"
+    <Button
+            android:text="SET INTEGER = 0"
+            android:layout_width="279dp"
+            android:layout_height="154dp"
+            android:id="@+id/exhaustCloseButton"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
-            app:layout_constraintVertical_bias="0.801"
-            android:id="@+id/scrollView">
+            android:layout_marginTop="60dp"
+            app:layout_constraintHorizontal_bias="0.924" />
 
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
-
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="757dp"
-                    android:id="@+id/textView" />
-        </LinearLayout>
-    </ScrollView>
+    <TextView
+            android:text="TextView"
+            android:layout_width="804dp"
+            android:layout_height="415dp"
+            android:id="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:autoSizeTextType="none"
+            app:layout_constraintTop_toBottomOf="@+id/exhaustOpenButton"
+            android:layout_marginTop="48dp"
+            android:layout_marginStart="76dp"
+            android:textColor="#D63333" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

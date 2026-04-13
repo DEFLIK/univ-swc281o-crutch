@@ -25,9 +25,9 @@
 <!--            </intent-filter>-->
 <!--        </service>-->
 
-        <meta-data
-                android:name="androidx.car.app.minCarApiLevel"
-                android:value="1" />
+<!--        <meta-data-->
+<!--                android:name="androidx.car.app.minCarApiLevel"-->
+<!--                android:value="1" />-->
 <!--        <service-->
 <!--            android:name=".infrastructure.UniVServiceConnection"-->
 <!--            android:enabled="true"-->

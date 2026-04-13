@@ -3,38 +3,40 @@ package com.wt.vehiclesetting;
 import android.car.Car;
 import android.os.Bundle;
 import android.util.Log;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import com.deflik.univswc281ocrutch.infrastructure.UniVServiceConnection;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import com.deflik.univswc281ocrutch.infrastructure.Constants;
+import com.deflik.univswc281ocrutch.services.UniVServiceConnection;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i("I", "univcrutch started");
+        Log.i(Constants.LOG_TAG, "univcrutch started");
         super.onCreate(savedInstanceState);
-//        EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_main);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
-//        setContentView(R.layout.activity_main);
-//
-//        var textView = (TextView) findViewById(R.id.textView);
-//        runOnUiThread(() -> textView.append("started"));
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
-        var uniVServiceConnection = new UniVServiceConnection();
+        var uniVServiceConnection = new UniVServiceConnection(this);
         var uniV = Car.createCar(getApplicationContext(), uniVServiceConnection);
-        uniVServiceConnection.bindBeforeConnection(uniV);
-        try {
+        uniVServiceConnection.bindCarBeforeConnection(uniV);
 
-            Log.i("I", "univcrutch car createde");
+        try {
+            Log.i(Constants.LOG_TAG, "univcrutch car created");
             uniV.connect();
-            Log.i("I", "univcrutch car connection started");
+            Log.i(Constants.LOG_TAG, "univcrutch car connection started");
         } catch (Exception e) {
-            Log.e("I", "univcrutch exception" + e);
+            Log.e(Constants.LOG_TAG, "univcrutch exception" + e);
         }
-//        uniVCabinManager.getBooleanProperty(UniVMCUOptionIds.EXHAUST_NOISE, );
     }
 }
